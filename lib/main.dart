@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_details/screen/home_details_screen.dart';
+import 'package:provider_details/view_model/home_view_model.dart';
 import 'package:uuid/uuid.dart';
 
 void main() {
@@ -18,9 +20,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      // home: ChangeNotifierProvider(
+      //     create: ((context) => ObjectProvider()),
+      //     builder: (context, child) => const MyHomePage()),
+
       home: ChangeNotifierProvider(
-          create: ((context) => ObjectProvider()),
-          builder: (context, child) => const MyHomePage()),
+          create: ((context) => HomeViewMode()),
+          builder: (context, child) => const HomeDetailsScreen()),
     );
   }
 }
